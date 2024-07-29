@@ -1,0 +1,581 @@
+@charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+
+/* custom css file made by JeanDoe */
+
+/* initaialisation */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+/*  declaration of variables  */
+:root{
+    --main-clr: #692D91;
+    --main-clr-alt: rgba(144, 66, 195, .20);
+    --second-clr: #713398;
+    --light-bg: #FDFAFF;
+    --white-bg: #f9fafa;
+    --second-bg: #e5e5e5;
+    --white: #fff;
+    --black: #1a1b1c;
+    --light-clr: #535353;
+    --body-font: 'Manrope', Arial, sans-serif;
+    --box-shadow: 2px 2px 7px 4px rgba(0,0,0,.1);
+    --border: 2px solid var(--second-clr);
+    --primary-gradient: linear-gradient(224deg, #B267D6 0%, #692D91 100%);
+}
+
+/* base */
+
+html{
+    font-size: 100%;
+    scroll-behavior: smooth;
+}
+
+body{
+    background: var(--light-bg);
+    font-weight: normal;
+    font-size: 0.938rem;
+    font-family: var(--body-font);
+    color: var(--black);
+}
+
+/*  dark and light theme */
+
+body.dark{
+    --light-bg: #2f2f1f;
+    --white-bg: #141414;
+    --second-bg: #2b2b2b;
+    --white: #1a1b1c;
+    --black: #fff;
+    --light-clr: rgba(255, 255, 255, .5);
+    --border: 1px solid rgba(255, 255, 255, .1);
+}
+
+/* reusables classes */
+
+.header,
+.footer,
+.section{
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+a{
+    color: var(--light-clr);
+    font-size: 0.938rem;
+    text-transform: capitalize;
+}
+
+.heading{
+    font-size: 1.2rem;
+    color: var(--light-clr);
+    text-transform: capitalize;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.7rem;
+    text-transform: uppercase;
+    transition: all .2s ease;
+    color: var(--white);
+    background: var(--primary-gradient);
+    border-radius: .25rem;
+    font-size: .813rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    font-weight: bold;
+}
+.btn:hover{
+    color: var(--black);
+}
+
+#theme-btn{
+    font-size: 1.2rem;
+    color: var(--main-clr);
+    padding: 0.3rem 0.5rem;
+    border-radius: .5rem;
+    border: 1px solid var(--main-clr);
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+}
+
+.link{
+    color: var(--light-clr);
+    text-transform: capitalize;
+}
+
+.link:hover{
+    text-decoration: underline var(--main-clr);
+}
+
+
+/* header section starts */
+
+.header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.header.active{
+    background: var(--light-bg);
+    border-bottom: var(--border);
+}
+
+.header .navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap-reverse;
+}
+
+.header .navbar a{
+    padding: 0.3rem;
+    border-radius: .25rem;
+    border: 2px solid transparent;
+}
+
+.header .navbar a:hover{
+    color: var(--main-clr);
+    background: var(--main-clr-alt);
+    padding: 0.3rem;
+    border-radius: .25rem;
+    border: var(--border);
+}
+
+.header .navbar a:first-child{
+    color: var(--main-clr);
+    background: var(--main-clr-alt);
+    padding: 0.3rem .7rem;
+    border-radius: .25rem;
+    border: var(--border);
+}
+
+.header .navbar a:last-child{
+    border: none;
+    padding: 0.7rem;
+}
+.header .navbar a:last-child:hover{
+    border: none;
+}
+
+/*  home section starts  */
+.home{
+    gap: 1rem;
+    background: url('../img/home.png') no-repeat center;
+    background-size: cover;
+    /* background-attachment:unset; */
+    height: 70vh;
+    position: relative;
+}
+.home .content{
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.home h1{
+    font-size: 1.8rem;
+    color: var(--main-clr);
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    font-weight: bolder;
+}
+.home p{
+    color: var(--light-clr);
+    margin-bottom: 1rem;
+}
+.home blockquote{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--white);
+    padding: 2rem;
+    bottom: -3rem;
+    max-width: 25rem;
+    box-shadow: var(--box-shadow);
+    border-radius: .25rem;
+}
+.home blockquote p{
+    font-style: italic;
+    text-align: center;
+}
+.home blockquote cite{
+    float: right;
+    color: var(--black);
+}
+
+/* contact section starts */
+
+.contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem 2rem;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+}
+
+.contact .form{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    max-width: 25rem;
+    width: 100%;
+}
+
+.contact .form .input_box{
+    
+}
+
+.contact .form label{
+    color: #7A7A7A;
+    text-transform: capitalize;
+}
+
+.contact .form input{
+    padding: .6rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(0,0,0,.1);
+    color: var(--light-clr);
+}
+
+.contact .form .btn{
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.contact .content{
+    max-width: 20rem;
+}
+
+.contact .content h2{
+    margin: 2rem 0;
+}
+
+.contact .content p{
+    text-align: justify;
+    font-size: 0.813rem;
+}
+
+
+/*  find us section starts */
+
+.find{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    background: url('../img/back_join.png') no-repeat;
+    position: relative;
+    height: 85vh;
+    color: var(--white);
+}
+
+.find h2{
+    color: var(--white);
+}
+
+.find i{
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: var(--white);
+}
+
+.find .back_img{
+    position: absolute;
+    top: 0; left: 0;
+    right: 0;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    object-fit: cover;
+}
+
+.find .localisation{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 40rem;
+    max-height: 20rem;
+}
+
+.find .infos{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 40rem;
+    width: 100%;
+}
+
+.find .infos{
+
+}
+
+.find .infos h3{
+    text-transform: capitalize;
+    color: var(--white);
+    font-size: 0.938rem;
+    margin-bottom: 1rem;
+}
+
+.find .infos a{
+    display: block;
+    margin: 0.5rem 0;
+    text-transform: lowercase;
+    color: var(--white);
+}
+
+.find .infos a:hover{
+    text-decoration: underline;
+}
+
+.find .infos .links span{
+    display: block;
+    margin: 0.5rem;
+    text-transform: capitalize;
+    color: var(--white);
+}
+
+.find .infos .links a{
+    display: inline-block;
+    margin: 0.5rem;
+}
+
+.find .infos .links a:hover{
+    text-decoration: none;
+    color: var(--light-bg);
+}
+
+/*  write us section starts */
+
+.write{
+    background: #F9F1FF;
+    border-radius: .5rem;
+    box-shadow: 15px 30px 50px 0px rgba(150, 135, 158, 0.17);
+    padding: 2rem;
+    max-width: 50rem;
+    width: 100%;
+    position: absolute;
+    top: 70%;
+}
+
+.write h2{
+    text-align: center;
+    color: var(--light-clr);
+}
+
+.write h2 + p{
+    color: var(--light-clr);
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.write form{
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
+    max-width: 25rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.write .inputs{
+    display: flex;
+    justify-content: space-between;
+    gap: .6rem;
+    width: 100%;
+}
+
+.write button{
+    color: var(--light-clr);
+    background: transparent;
+    padding: 0.5rem .7rem;
+    border-radius: .25rem;
+    border: 2px solid rgba(0,0,0,.1);
+    cursor: pointer;
+}
+
+.write button:first-child{
+    color: var(--main-clr);
+    background: var(--main-clr-alt);
+    padding: 0.3rem .7rem;
+    border-radius: .25rem;
+    border: var(--border);
+    cursor: pointer;
+}
+
+.write button:hover{
+    color: var(--main-clr);
+    background: var(--main-clr-alt);
+    padding: 0.3rem .7rem;
+    border-radius: .25rem;
+    border: var(--border);
+    cursor: pointer;
+}
+
+.write .input_box{
+    display: block;
+    width: 100%;
+}
+
+.write label{
+    display: block;
+    width: 100%;
+    text-transform: capitalize;
+    color: var(--light-clr);
+}
+
+.write label:first-child{
+    margin-bottom: 0.6rem;
+}
+
+.write .input_box input{
+    padding: .6rem;
+    width: 100%;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(0,0,0,.1);
+    color: var(--light-clr);
+}
+.write .btn{
+    text-align: center;
+    width: 100%;
+}
+
+.write textarea{
+    width: 100%;
+    color: var(--light-clr);
+    font-family: var(--body-font);
+    resize: none;
+    text-align: left;
+    padding: 0.5rem;
+    font-size: 0.813rem;
+    border: 1px solid rgba(0,0,0,.1);
+}
+/* footer section starts */
+
+.footer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1rem 0 1rem;
+    height: 60vh;
+}
+
+.footer .icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer .icons a{
+    font-size: 1.3rem;
+}
+
+.footer .icons a:hover{
+    color: var(--main-clr);
+}
+
+.footer .icons span{
+    margin-right: 0.5rem;
+    color: var(--main-clr);
+    font-size: 1.3rem;
+    line-height: 1.4;
+    vertical-align: center;
+}
+
+.footer .icons span img{
+    height: 2rem;
+    width: 2rem;
+    object-fit: contain;
+}
+
+.footer .quick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.footer .quick a{
+    font-size: 0.813rem;
+}
+
+.footer .quick a:hover{
+    text-decoration: underline;
+}
+
+.footer .copyright{
+    background: var(--main-clr);
+    color: var(--white);
+    font-size: 0.813rem;
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    html{
+        font-size: 85%;
+    }
+    .contact{
+        flex-direction: column;
+    }
+    .footer{
+        height: 100vh;
+    }
+    .footer .icons{
+        flex-direction: column;
+    }
+    .footer .quick{
+        flex-direction: column;
+    }
+
+    .find .localisation{
+        max-width: 30rem;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    html{
+        font-size: 80%;
+    }
+    .write{
+        display: none;
+    }
+    .find{
+        height: auto;
+    }
+    .footer{
+        height: auto;
+    }
+
+    .home blockquote{
+        padding: 1rem;
+    }
+}
